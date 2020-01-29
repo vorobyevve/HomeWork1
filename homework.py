@@ -50,11 +50,11 @@ class CashCalculator(Calculator):
             return f"На сегодня осталось {round(balance/balance_in_currency, how_round)} {value_currency}"
         return f"Денег нет, держись: твой долг - {-round(balance/balance_in_currency, how_round)} {value_currency}"
 
-class Record:
-    def __init__(self, amount, comment, date=None):
-        self.amount = amount
-        self.comment = comment
-        if self.date == None:
-            self.date=dt.datetime.today().strftime('%d.%m.%Y')
-        else:
-            self.date = dt.datetime.strptime(date, '%d.%m.%Y').date()
+class Record: 
+     def __init__(self, amount, comment, date=None): 
+         self.amount = amount 
+         self.comment = comment 
+         if date == None: 
+             self.date = dt.datetime.today().date() 
+         else: 
+             self.date = dt.datetime.strptime(date, '%d.%m.%Y').date() 
